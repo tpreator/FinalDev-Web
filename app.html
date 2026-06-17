@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Photo Shoot Idea Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* Everything for the app is on this page */
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: #f9fafb;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .app-container {
+      max-width: 480px;
+      width: 90%;
+      background-color: rgba(15, 23, 42, 0.92);
+      border-radius: 1.25rem;
+      padding: 1.75rem 1.5rem 2rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 1.7rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #e5e7eb;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.75rem;
+      border: 1px solid #4b5563;
+      background-color: #020617;
+      color: #f9fafb;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      border: none;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: linear-gradient(135deg, #6366f1, #22c55e);
+      color: #f9fafb;
+      margin-bottom: 1rem;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .idea-card {
+      border-radius: 0.75rem;
+      background-color: #020617;
+      border: 1px solid #4b5563;
+      padding: 0.75rem 0.9rem;
+      text-align: left;
+      min-height: 80px;
+    }
+
+    .idea-title {
+      font-weight: 700;
+      margin-bottom: 0.35rem;
+      color: #a5b4fc;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #a5b4fc;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="app-container">
+    <h1>Photo Shoot Idea Generator</h1>
+    <p>
+      Type a location or sport, then click “Generate Idea” to get a creative prompt
+      for your next shoot.
+    </p>
+
+    <div class="form-area">
+      <label for="topicInput">Location or sport</label>
+      <input id="topicInput" type="text" placeholder="e.g., football field, basketball gym, downtown" />
+      <button id="generateBtn">Generate Idea</button>
+    </div>
+
+    <div class="idea-card" id="ideaCard">
+      <div class="idea-title">Your next idea will show up here.</div>
+      <div class="idea-text">
+        Press the button to get a new concept.
+      </div>
+    </div>
+
+    <a href="scratch.html" class="back-link">&larr; Back to Scratch Page</a>
+  </div>
+
+  <script>
+    const ideas = [
+      "Capture a dramatic sideline series where players react to a game-changing moment at the {topic}. Shoot wide, then zoom in on faces.",
+      "Do a sequence of panning shots that follow a single player sprinting down the {topic}. Aim for motion blur in the background.",
+      "At the {topic}, focus only on details: laces, hands, shoes, turf, scoreboards, and chalk lines. Turn them into a minimalist grid.",
+      "Use backlighting at golden hour on the {topic}. Expose for the subject’s silhouette and let the sky go bright and colorful.",
+      "Tell a story at the {topic} in five frames: pre-game, warm-up, action, celebration, and the quiet walk home.",
+      "Shoot from an unexpected angle at the {topic}: lie on the ground, get behind the goal, or climb higher in the bleachers.",
+      "Turn the {topic} into a portrait studio. Grab teammates individually and take quick character portraits between plays."
+    ];
+
+    const titles = [
+      "Game-Changing Moment",
+      "Speed & Motion",
+      "Details Only",
+      "Glow Hour Silhouettes",
+      "Five-Frame Story",
+      "New Perspective",
+      " sideline Portrait Series"
+    ];
+
+    const topicInput = document.getElementById("topicInput");
+    const generateBtn = document.getElementById("generateBtn");
+    const ideaCard = document.getElementById("ideaCard");
+    const ideaTitle = ideaCard.querySelector(".idea-title");
+    const ideaText = ideaCard.querySelector(".idea-text");
+
+    function generateIdea() {
+      const topicRaw = topicInput.value.trim();
+      const topic = topicRaw || "field";
+
+      const index = Math.floor(Math.random() * ideas.length);
+      ideaTitle.textContent = titles[index].replace(" ", "").startsWith("sideline")
+        ? "Sideline Portrait Series"
+        : titles[index];
+
+      ideaText.textContent = ideas[index].replace("{topic}", topic);
+    }
+
+    generateBtn.addEventListener("click", generateIdea);
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+/* Global typography */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1f2933;
+}
+
+/* Hero section */
+.hero-section {
+  padding-top: 96px;           /* makes room for fixed navbar */
+  padding-bottom: 72px;
+  background: linear-gradient(135deg, #0d6efd, #4f46e5);
+  color: #f9fafb;
+}
+
+.hero-img {
+  max-width: 320px;
+  border: 4px solid rgba(255, 255, 255, 0.7);
+}
+
+/* Generic section heading */
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Info card on About section */
+.info-card {
+  background-color: #ffffff;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* Resume styling */
+.resume-heading {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}
+
+.resume-item {
+  margin-bottom: 1rem;
+}
+
+.resume-item h5 {
+  margin-bottom: 0.15rem;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Small tweak for cards */
+.card-title {
+  font-weight: 700;
+}
+
+/* Utility */
+.bg-primary {
+  background-color: #1d4ed8 !important;
+}

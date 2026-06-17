@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ty's Scratch Page – Sports Photography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Custom CSS 2 -->
+  <link rel="stylesheet" href="scratch.css" />
+</head>
+<body id="top">
+  <div class="page-wrapper">
+    <!-- HEADER DIV #1 -->
+    <header class="site-header">
+      <h1>Sports Photography Sandbox</h1>
+      <p class="tagline">
+        A scratch page where I experiment with HTML, CSS, and some of my favorite things.
+      </p>
+      <nav class="scratch-nav">
+        <a href="index.html">Back to Professional Site</a>
+        <a href="#gear">My Gear List</a>
+        <a href="#video">YouTube Clip</a>
+        <a href="#tableau">Tableau Viz</a>
+        <a href="app.html">Photo Idea Web App</a>
+      </nav>
+    </header>
+
+    <!-- LAYOUT DIVS #2 and #3 -->
+    <div class="layout">
+      <div class="left-column">
+        <h2 id="gear">How I Shoot a Game</h2>
+
+        <!-- Ordered list with embedded unordered list -->
+        <ol>
+          <li>
+            Pre-Game Routine
+            <ul>
+              <li>Charge batteries &amp; format cards</li>
+              <li>Check weather and lighting conditions</li>
+              <li>Arrive at least 30 minutes early</li>
+            </ul>
+          </li>
+          <li>
+            During the Game
+            <ul>
+              <li>Track the ball and anticipate plays</li>
+              <li>Look for emotion on the sidelines</li>
+              <li>Mix wide shots with tight action shots</li>
+            </ul>
+          </li>
+          <li>
+            Post-Game Workflow
+            <ul>
+              <li>Back up files to an external drive</li>
+              <li>Cull favorites in Lightroom</li>
+              <li>Deliver a clean, edited gallery</li>
+            </ul>
+          </li>
+        </ol>
+
+        <p class="tip highlight">
+          Pro tip: remember at least one photo per player, not just the star of the game.
+        </p>
+      </div>
+
+      <div class="main-column">
+        <h2>Sample Image</h2>
+        <p>
+          Here’s an example for the kind of sports photography I love to capture.
+
+        </p>
+        <!-- Replace src with an actual image file in your project -->
+        <img src="images/sample-sports-photo.jpg"
+             alt="Football player catching a pass under stadium lights"
+             class="feature-image" />
+
+        <h2 id="video">Embedded YouTube Video</h2>
+        <div class="video-wrapper">
+  <iframe
+    width="100%"
+    height="315"
+    src="https://www.youtube.com/embed/VUCPznpejI8"
+    title="Sports Photography Video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
+
+
+        <h2 id="tableau">Interactive Tableau Graph</h2>
+        <p>
+          Below is an example Tableau Public visualization embedded with an iframe.
+          You can swap this URL for any Tableau visualization you prefer.
+        </p>
+
+       <div class="tableau-wrapper">
+  <iframe
+    src="https://public.tableau.com/views/RegionalSampleWorkbook/Storms?:showVizHome=no"
+    width="100%"
+    height="450"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
+        <p class="small-note">
+          Want to jump back up? <a href="#top">Return to the top of the page</a>.
+          That link is an example of an on-page anchor.
+        </p>
+      </div>
+
+      <div class="right-column">
+        <h3>Quick Settings Cheat Sheet</h3>
+        <ul class="cheat-list">
+          <li><strong>Sport:</strong> Football at night</li>
+          <li><strong>Shutter:</strong> 1/1000 sec</li>
+          <li><strong>Aperture:</strong> f/2.8 – f/4</li>
+          <li><strong>ISO:</strong> 3200–6400</li>
+        </ul>
+
+        <h3>Try My Web App</h3>
+        <p>
+          Need inspiration for your next shoot?  
+          Visit my tiny web app made with AI help:
+        </p>
+        <p>
+          <a class="app-link" href="app.html">Photo Shoot Idea Generator</a>
+        </p>
+      </div>
+    </div>
+
+    <footer class="scratch-footer">
+      <p>&copy; <span id="year"></span> Tyler Preator – Scratch Page</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
